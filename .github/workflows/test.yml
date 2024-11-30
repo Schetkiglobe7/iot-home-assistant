@@ -12,14 +12,15 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+    
+    #TODO: Da decommentare quando sviluppo la parte di testing.
+    # - name: Setup Python
+    #   uses: actions/setup-python@v3
+    #   with:
+    #     python-version: "3.9"
 
-    - name: Setup Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.9"
+    # - name: Install Dependencies
+    #   run: pip install -r requirements.txt
 
-    - name: Install Dependencies
-      run: pip install -r requirements.txt
-
-    - name: Run Tests
-      run: pytest
+    # - name: Run Tests
+    #   run: pytest

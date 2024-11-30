@@ -16,6 +16,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    - name: Build Docker Image
-      run: |
-        docker build -t my_project_image:latest .
+    #TODO: Da decommentare quando inizio a sviluppare e ho le immagini docker.
+    #- name: Build Docker Image
+    #  run: |
+    #    docker build -t my_project_image:latest .
