@@ -1,6 +1,12 @@
 
 # IoT Home Assistant
 
+![Build Status](https://github.com/Schetkiglobe7/iot-home-assistant/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://codecov.io/gh/Schetkiglobe7/iot-home-assistant/branch/develop/graph/badge.svg)
+![License](https://img.shields.io/github/license/Schetkiglobe7/iot-home-assistant)
+![Last Commit](https://img.shields.io/github/last-commit/Schetkiglobe7/iot-home-assistant)
+![Open Issues](https://img.shields.io/github/issues/Schetkiglobe7/iot-home-assistant)
+
 An open-source IoT project based on Home Assistant to provide a replicable and
 scalable architecture for managing IoT devices. This project is designed to run
 on Docker containers with configurations stored in Docker volumes and utilizes
