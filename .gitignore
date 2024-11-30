@@ -1,0 +1,72 @@
+# General System Files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Environment Variables
+.env
+.env.*.local
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Docker
+docker-compose.override.yml
+*.pid
+*.tar
+*.tgz
+.docker/
+docker-data/
+docker-logs/
+.dockerignore
+
+# Home Assistant
+home-assistant_v2.db
+home-assistant.log
+deps/
+custom_components/__pycache__/
+*.yaml~
+*.yaml.bak
+
+# Mosquitto
+mosquitto.log
+mosquitto/data/
+mosquitto/config/mosquitto.conf~
+mosquitto/config/mosquitto.conf.bak
+mosquitto/log/
+
+# Editor and IDE Files
+.idea/
+.vscode/
+*.iml
+
+# Build and Cache
+dist/
+build/
+.cache/
+coverage/
+.nyc_output/
+*.test-results.xml
+*.lint-staged.cache
+
+# Test and Linting
+*.coverage
+*.test-output
+*.lint-staged.cache
+
+# Temporary Files
+tmp/
+*.tmp
+*.old
+
+# Backup Files
+*.bak
+*.orig
