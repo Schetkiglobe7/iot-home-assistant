@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "auth_provider.homeassistant",
+  "data": {
+    "users": [
+      {
+        "username": "schetkiglobe7",
+        "password": "JDJiJDEyJERGaWNydVQvcjlaYkQxTUcucE5SZU9XMmhnaS5LUmloamNacGJpa0dOM08yeC44SlZ1ZnBP"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "minor_version": 4,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {"created_at":"2024-11-30T16:06:14.828815+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"sun","entry_id":"01JDYX571CHWKSK23Q2470F3YC","minor_version":1,"modified_at":"2024-11-30T16:06:14.828819+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"import","title":"Sun","unique_id":null,"version":1},
+      {"created_at":"2024-11-30T16:06:15.095352+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"go2rtc","entry_id":"01JDYX579QTRFVKB5TWZR050SG","minor_version":1,"modified_at":"2024-11-30T16:06:15.095355+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","title":"go2rtc","unique_id":null,"version":1},
+      {"created_at":"2024-11-30T16:26:53.965893+00:00","data":{"track_home":true},"disabled_by":null,"discovery_keys":{},"domain":"met","entry_id":"01JDYYB14DYCMH0C3VQKXVGTAJ","minor_version":1,"modified_at":"2024-11-30T16:26:53.965897+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","title":"Home","unique_id":null,"version":1},
+      {"created_at":"2024-11-30T16:26:53.969716+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"shopping_list","entry_id":"01JDYYB14HSRYBCWK0MAWWWWW5","minor_version":1,"modified_at":"2024-11-30T16:26:53.969719+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","title":"Shopping list","unique_id":"shopping_list","version":1},
+      {"created_at":"2024-11-30T16:26:54.016605+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"radio_browser","entry_id":"01JDYYB160RKJ9T2KV1JNER5KQ","minor_version":1,"modified_at":"2024-11-30T16:26:54.016608+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","title":"Radio Browser","unique_id":null,"version":1},
+      {"created_at":"2024-11-30T16:26:54.018052+00:00","data":{"language":"en","tld":"com"},"disabled_by":null,"discovery_keys":{},"domain":"google_translate","entry_id":"01JDYYB162K3WCDRZQADJVMDRH","minor_version":1,"modified_at":"2024-11-30T16:26:54.018054+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","title":"Google Translate text-to-speech","unique_id":null,"version":1},
+      {"created_at":"2024-11-30T16:38:27.253270+00:00","data":{"api_key":"JN1qNQDdi0yxY"},"disabled_by":null,"discovery_keys":{},"domain":"co2signal","entry_id":"01JDYZ065NH5DV00BCG21EE0V8","minor_version":1,"modified_at":"2024-11-30T16:38:27.253285+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"user","title":"Electricity Maps","unique_id":null,"version":1}
+    ]
+  }
+}

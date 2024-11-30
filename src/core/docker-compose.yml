@@ -1,0 +1,57 @@
+# Creator: Antonio Pilato
+# Created on: 2024-12-01
+# Description: Docker Compose configuration for the core Home Assistant service.
+# Repository: https://github.com/AntonioPilato/iot-home-assistant
+
+
+version: "3.9"
+
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ./home-assistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "8123:8123"
+    environment:
+      POSTGRES_DB:        ${HOME_ASSISTANT_MYSQL_DB}
+      POSTGRES_USER:      ${HOME_ASSISTANT_MYSQL_USER}
+      POSTGRES_PASSWORD:  ${HOME_ASSISTANT_MYSQL_PASSWORD}
+
+
+  mosquitto:
+    container_name: mosquitto
+    build:
+      context: ./mqtt
+      dockerfile: Dockerfile
+    platform: linux/amd64  # Specifica la piattaforma
+    volumes:
+      - ./mqtt/config:/mosquitto/config
+      - ./mqtt/data:/mosquitto/data
+      - ./mqtt/log:/mosquitto/log
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    restart: unless-stopped
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${BROKER_MYSQL_USER}
+      MYSQL_PASSWORD: ${BROKER_MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${BROKER_MYSQL_DB}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    restart: unless-stopped

@@ -1,0 +1,17 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+recorder:
+  db_url: postgresql://homeassistant_user:secure_password@<POSTGRES_HOST>:5432/homeassistant
+  commit_interval: 1
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+logger:
+  default: info
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

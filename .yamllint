@@ -1,0 +1,10 @@
+extends: default
+
+rules:
+  comments-indentation: disable
+  document-start: disable
+  custom-tags:
+    - "!input"
+    - "!include"
+    - "!include_dir_merge_named"
+    - "!include_dir_merge_list"

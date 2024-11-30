@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "minor_version": 8,
+  "key": "core.device_registry",
+  "data": {
+    "devices": [
+      {"area_id":null,"config_entries":["01JDYX571CHWKSK23Q2470F3YC"],"configuration_url":null,"connections":[],"created_at":"2024-11-30T16:06:14.830539+00:00","disabled_by":null,"entry_type":"service","hw_version":null,"id":"b6454fc040026e422608768fdeb44ada","identifiers":[["sun","01JDYX571CHWKSK23Q2470F3YC"]],"labels":[],"manufacturer":null,"model":null,"model_id":null,"modified_at":"2024-11-30T16:06:14.830566+00:00","name_by_user":null,"name":"Sun","primary_config_entry":"01JDYX571CHWKSK23Q2470F3YC","serial_number":null,"sw_version":null,"via_device_id":null},
+      {"area_id":null,"config_entries":["01JDYYB14DYCMH0C3VQKXVGTAJ"],"configuration_url":"https://www.met.no/en","connections":[],"created_at":"2024-11-30T16:26:54.416535+00:00","disabled_by":null,"entry_type":"service","hw_version":null,"id":"1600edfcab8c51d35e4ae2b4adc79846","identifiers":[["met","01JDYYB14DYCMH0C3VQKXVGTAJ"]],"labels":[],"manufacturer":"Met.no","model":"Forecast","model_id":null,"modified_at":"2024-11-30T16:26:54.416595+00:00","name_by_user":null,"name":"Forecast","primary_config_entry":"01JDYYB14DYCMH0C3VQKXVGTAJ","serial_number":null,"sw_version":null,"via_device_id":null},
+      {"area_id":"soggiorno","config_entries":["01JDYZ065NH5DV00BCG21EE0V8"],"configuration_url":"https://www.electricitymaps.com/","connections":[],"created_at":"2024-11-30T16:38:27.415491+00:00","disabled_by":null,"entry_type":"service","hw_version":null,"id":"43b8a78e91bdb99ce1954a25e24a298c","identifiers":[["co2signal","01JDYZ065NH5DV00BCG21EE0V8"]],"labels":[],"manufacturer":"Electricity Maps","model":null,"model_id":null,"modified_at":"2024-11-30T16:38:33.519379+00:00","name_by_user":null,"name":"Electricity Maps","primary_config_entry":"01JDYZ065NH5DV00BCG21EE0V8","serial_number":null,"sw_version":null,"via_device_id":null}
+    ],
+    "deleted_devices": []
+  }
+}
