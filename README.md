@@ -1,169 +1,99 @@
 
-# IoT Home Assistant - A Modular and Replicable IoT System
+# IoT Home Assistant
 
-Welcome to the **IoT Home Assistant** project! This open-source initiative leverages the power of **Home Assistant**, **Docker**, and a scalable architecture to provide an easily replicable IoT system for managing smart devices across multiple locations.
+![Build Status](https://github.com/Schetkiglobe7/iot-home-assistant/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/github/license/Schetkiglobe7/iot-home-assistant)
+![Last Commit](https://img.shields.io/github/last-commit/Schetkiglobe7/iot-home-assistant)
+![Open Issues](https://img.shields.io/github/issues/Schetkiglobe7/iot-home-assistant)
 
----
+An open-source IoT project based on Home Assistant to provide a replicable and
+scalable architecture for managing IoT devices. This project is designed to run
+on Docker containers with configurations stored in Docker volumes and utilizes
+a CI/CD pipeline for streamlined deployment and collaboration.
 
-## 🚀 Project Overview
+## Features
 
-The IoT Home Assistant project is designed to serve as a **core IoT management system**, capable of controlling and monitoring devices in **distributed environments**. It focuses on modularity, portability, and ease of replication, making it suitable for deployment across **multiple locations** with minimal setup.
+- **Home Assistant Core**: Centralized IoT management.
+- **Docker-Based Architecture**: Fully containerized, portable, and easily
+  replicable.
+- **Branch Protection Rules**: Enforced rules to maintain code quality and
+  collaboration standards.
+- **Linting and CI/CD Pipelines**:
+  - YAML and Markdown linting.
+  - Docker image building and verification.
+  - Conventional Commit message validation.
+- **GitHub Collaboration**: Open to contributors with detailed guidelines and
+  automated workflows.
+- **CODEOWNERS**: File-based ownership for specific sections of the code.
 
-Key Features:
-- **Home Assistant in Docker**: A containerized version of Home Assistant for seamless deployment.
-- **Replicable Architecture**: Fully configurable via Docker volumes and `.env` files.
-- **Distributed Databases**: Local databases at each site synchronize with a central shard database for redundancy and data integrity.
-- **VPN Integration**: Ensures secure communication across multiple locations.
-- **IoT Protocol Support**: Includes MQTT, Prometheus, and Grafana for device communication and monitoring.
-- **CI/CD Automation**: Built-in pipelines for automated deployment and updates.
+## Getting Started
 
----
+### Prerequisites
 
-## 🛠️ Features and Functionality
+- [Docker](https://www.docker.com/) installed on your machine.
+- [Node.js](https://nodejs.org/) for managing project dependencies.
+- A GitHub account for collaboration.
 
-1. **Home Assistant Core**: 
-   - Centralized IoT management platform.
-   - Easily extended with Home Assistant integrations for smart devices (lights, sensors, switches, etc.).
-   
-2. **Docker-Based Deployment**:
-   - **Modular**: Each instance is deployed as a container.
-   - **Persistent Configurations**: All settings are stored in Docker volumes for consistency across deployments.
-   - **Scalability**: Easily replicate the system by cloning the repository and running `deploy.sh`.
+### Installation
 
-3. **Data Redundancy and Sharding**:
-   - **Local Databases**: Each site runs a local database for faster access and fault tolerance.
-   - **Centralized Database**: Data from all sites is synchronized to a central database shard.
+1. Clone the repository:
 
-4. **Monitoring and Alerts**:
-   - Integrated with **Grafana** and **Prometheus** for real-time data visualization and alerts.
-   - Use MQTT for low-latency communication between devices.
-
-5. **Security**:
-   - VPN-based communication ensures secure data transfer across distributed systems.
-   - Configurable authentication for all services.
-
----
-
-## 🔧 Architecture
-
-The project uses the following modular architecture:
-
-```
-iot-home-assistant/
-├── config/               # Configuration files and environment variables
-├── volumes/              # Persistent Docker volumes
-├── scripts/              # Automation scripts for deployment and maintenance
-├── .github/              # CI/CD workflows and templates
-│   ├── ISSUE_TEMPLATE/   # Issue reporting templates
-│   └── workflows/        # GitHub Actions workflows for CI/CD
-├── docker-compose.yml    # Docker Compose configuration
-├── Dockerfile            # Docker image definition for Home Assistant
-├── LICENSE               # Project license
-├── README.md             # Project documentation
-└── CONTRIBUTING.md       # Contribution guidelines
-```
-
----
-
-## 📋 Requirements
-
-- **Hardware**:
-  - A device capable of running Docker (e.g., Raspberry Pi, UDOO Neo, or any server).
-  - At least **2 GB of RAM** and **8 GB of storage** for basic deployments.
-
-- **Software**:
-  - **Docker** and **Docker Compose** installed on the host machine.
-  - **Git** for cloning the repository.
-
----
-
-## 🖥️ Installation and Setup
-
-Follow these steps to get started:
-
-1. **Clone the repository**:
    ```bash
-   git clone https://github.com/<your-username>/iot-home-assistant.git
+   git clone https://github.com/<your-repo>/iot-home-assistant.git
    cd iot-home-assistant
    ```
 
-2. **Configure the environment**:
-   - Edit the `.env` file to match your setup:
-     ```env
-     TZ=Europe/Rome
-     DB_HOST=192.168.1.100
-     MQTT_BROKER=mqtt://broker.local
-     ```
+2. Install dependencies:
 
-3. **Deploy the system**:
    ```bash
-   ./scripts/deploy.sh
+   npm install
    ```
 
-4. **Access Home Assistant**:
-   - Open your browser and navigate to:
-     ```
-     http://localhost:8123
-     ```
+3. Configure Docker volumes for persistent storage.
 
----
+4. Build and run the Docker container:
 
-## 🤝 Contributing
+   ```bash
+   docker-compose up --build
+   ```
 
-We welcome contributions from the community! To get started, read the [CONTRIBUTING.md](CONTRIBUTING.md) file. Here’s how you can contribute:
-- **Report Bugs**: Use our [Issue Template](.github/ISSUE_TEMPLATE/bug_report.md).
-- **Propose Features**: Suggest new ideas via discussions or issues.
-- **Submit Pull Requests**: Follow the coding guidelines outlined in the `CONTRIBUTING.md`.
+### Usage
 
----
+Access the Home Assistant interface in your browser:
 
-## 📈 CI/CD Pipeline
+```plaintext
+http://<host-ip>:8123
+```
 
-This project uses **GitHub Actions** for continuous integration and deployment:
-- **Build and Test**: Automatically builds Docker images and tests configurations on every pull request.
-- **Deploy**: Automates deployment to target machines using SSH.
+## Branching Policy
 
----
+- **Main Branch**: Stable code ready for production.
+- **Develop Branch**: Pre-production code for integration testing.
+- **Feature Branches**: `feature/<name>` for new functionalities.
+- **Hotfix Branches**: `hotfix/<name>` for critical fixes.
+- **Bugfix Branches**: `bugfix/<name>` for minor corrections.
 
-## 📊 Monitoring and Analytics
+## Contribution Guidelines
 
-The project integrates:
-1. **Grafana** for visualization:
-   - Dashboards for device status and performance metrics.
-2. **Prometheus** for metrics collection.
-3. **MQTT** for real-time communication.
+We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md)
+file for guidelines on:
 
----
+- Setting up the project locally.
+- Writing commit messages following the **Conventional Commits** format.
+- Submitting pull requests.
 
-## 📜 License
+## Code Quality and Pipelines
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+- **Linting**:
+  - YAML: `yamllint`
+  - Markdown: `markdownlint`
+- **CI/CD**:
+  - Pull requests must pass linting and status checks.
+  - Branch protection rules ensure quality and prevent accidental merges.
+- **Husky and Commitlint**:
+  - Pre-commit and commit-msg hooks validate code and commit messages.
 
----
+## LICENSE
 
-## 🙋 FAQ
-
-**Q: Can I deploy this on a cloud server?**  
-A: Yes, it works on any device or cloud service that supports Docker, such as AWS EC2 or DigitalOcean.
-
-**Q: How can I add a new IoT device?**  
-A: Add the device to Home Assistant via the integrations UI or update the configuration files in the `config/` folder.
-
-**Q: What happens if a local database goes offline?**  
-A: Data redundancy ensures that critical data is synchronized to the central shard database.
-
----
-
-## 📞 Support
-
-If you have questions, feel free to reach out:
-- Open an issue on GitHub.
-- Join our discussions in the **[Discussions tab](https://github.com/<your-username>/iot-home-assistant/discussions)**.
-
----
-
-## 🌟 Acknowledgments
-
-Special thanks to the open-source community for tools like Docker, Home Assistant, Grafana, and Prometheus, which make this project possible.
-
-Let’s build the future of IoT together!
+This project is licensed under the MIT License. See the LICENSE file for
+details.
