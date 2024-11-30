@@ -1,149 +1,98 @@
 
 # Contributing to IoT Home Assistant
 
-Thank you for considering contributing to **IoT Home Assistant**! This guide will help you understand how to contribute effectively and maintain consistency across the project.
+We’re excited to have you contribute to the IoT Home Assistant project! Please
+follow the guidelines below to ensure a smooth collaboration.
 
----
+## Getting Started
 
-## 👩‍💻 How to Contribute
+1. Fork the repository and clone it locally:
 
-We welcome all contributions, including:
-- Reporting bugs
-- Suggesting new features
-- Improving documentation
-- Submitting code improvements or new functionality
-
-To get started:
-1. Fork the repository to your GitHub account.
-2. Clone your forked repository locally:
    ```bash
    git clone https://github.com/<your-username>/iot-home-assistant.git
    cd iot-home-assistant
    ```
-3. Create a new branch for your contribution:
+
+2. Install the dependencies:
+
    ```bash
-   git checkout -b feature/your-feature-name
+   npm install
    ```
-4. Make your changes and commit them with a descriptive message:
+
+3. Create a branch for your changes:
+
    ```bash
-   git commit -m "Add feature: your-feature-name"
+   git checkout -b feature/<your-feature-name>
    ```
-5. Push your changes to your forked repository:
+
+## Commit Messages
+
+All commit messages must follow the **Conventional Commits** format:
+
+```plaintext
+<type>(<scope>): <subject>
+```
+
+- **Type**: What kind of change you're making:
+  - `feat`: A new feature.
+  - `fix`: A bug fix.
+  - `docs`: Documentation-only changes.
+  - `style`: Code style changes (e.g., formatting).
+  - `refactor`: Code restructuring without changing behavior.
+  - `test`: Adding or modifying tests.
+  - `chore`: Maintenance or chores (e.g., dependency updates).
+
+- **Scope**: (Optional) The area of the project affected
+   (e.g., pipelines, auth).
+- **Subject**: A concise description of the change (e.g., `add login feature`).
+
+### Examples
+
+```bash
+git commit -m "feat(auth): add login feature"
+git commit -m "fix(api): resolve endpoint bug"
+```
+
+## Pull Requests
+
+1. Ensure your branch is up-to-date with the `develop` or `main` branch:
+
    ```bash
-   git push origin feature/your-feature-name
+   git pull origin develop
    ```
-6. Submit a pull request to the `main` branch of the original repository.
 
----
+2. Push your changes:
 
-## 🛠️ Development Workflow
-
-### Prerequisites
-Make sure you have the following tools installed:
-- **Git**
-- **Docker** and **Docker Compose**
-
-### Setting Up the Environment
-1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/iot-home-assistant.git
-   cd iot-home-assistant
-   ```
-2. Build and start the Docker containers:
-   ```bash
-   docker-compose up -d
-   ```
-3. Access Home Assistant locally:
-   ```
-   http://localhost:8123
+   git push origin feature/<your-feature-name>
    ```
 
----
+3. Open a pull request:
+   - Describe the changes you made.
+   - Reference any related issues.
 
-## 📝 Code Guidelines
+### Requirements
 
-To maintain code quality and consistency, please follow these guidelines:
+- All tests and linting checks must pass.
+- At least one approval is required for merging.
+- Resolve all conversations in the pull request.
 
-### Coding Standards
-- **Python**: Use [PEP 8](https://peps.python.org/pep-0008/) guidelines.
-- Use `black` for formatting Python code:
-  ```bash
-  pip install black
-  black .
-  ```
+## Testing Locally
 
-### File Structure
-- Place configuration files in the `config/` directory.
-- Persistent data should be stored in `volumes/`.
+Run linting and pre-commit hooks:
 
-### Writing Clean Commits
-Write clear and concise commit messages:
-- Use the format: `<type>(scope): <description>`.
-  - Example: `feat(docker): add Docker Compose support`
-- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
+```bash
+npm test
+npx lint-staged
+```
 
-### Testing
-Before submitting, ensure:
-- Your changes don’t break existing functionality.
-- You’ve tested your changes locally.
+## Code Ownership
 
----
+- We use a `CODEOWNERS` file to assign responsibility for specific files or
+   sections.
+- If your pull request modifies files with assigned owners, their approval is
+   required.
 
-## 🐛 Reporting Bugs
+## Need Help?
 
-Help us improve by reporting bugs. When filing an issue, include:
-1. A clear and descriptive title.
-2. Steps to reproduce the issue.
-3. Expected and actual behavior.
-4. The environment (Home Assistant version, OS, Docker version).
-
----
-
-## 💡 Suggesting Features
-
-Have an idea? Great! Submit a feature request by:
-1. Opening an issue with the label `enhancement`.
-2. Providing a detailed explanation of the feature and its use case.
-
----
-
-## ✅ Submitting Pull Requests
-
-Follow these steps for submitting a pull request:
-1. Ensure your branch is up-to-date with the `main` branch:
-   ```bash
-   git pull origin main
-   ```
-2. Resolve any conflicts, if necessary.
-3. Submit the pull request via GitHub:
-   - Go to the repository on GitHub.
-   - Click on **Pull Requests** > **New Pull Request**.
-4. Provide a detailed description of your changes.
-
----
-
-## 🎨 Improving Documentation
-
-Documentation is as important as the code itself. If you notice any issues or want to expand the documentation:
-1. Update the relevant `.md` files in the repository.
-2. Follow the same process as for submitting code changes.
-
----
-
-## 🛡️ Code of Conduct
-
-By contributing to this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). Please review it before starting.
-
----
-
-## 🙋 Need Help?
-
-If you have any questions or need help getting started:
-- Open a discussion in the **[Discussions tab](https://github.com/<your-username>/iot-home-assistant/discussions)**.
-- Email the project maintainer: Antonio Pilato at [antonio.pilato96@outlook.com](mailto:antonio.pilato96@outlook.com).
-
----
-
-## 🌟 Thank You!
-
-Thank you for taking the time to contribute to IoT Home Assistant. Together, we can build a powerful and scalable IoT system!
+Feel free to open an issue or contact the maintainers. We’re here to help!
